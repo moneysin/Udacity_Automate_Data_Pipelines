@@ -141,4 +141,3 @@ load_songplays_table >> load_song_dimension_table >> run_data_checks >> end_oper
 load_songplays_table >> load_user_dimension_table >> run_data_checks >> end_operator
 load_songplays_table >> load_artist_dimension_table >> run_data_checks >> end_operator
 load_songplays_table >> load_time_dimension_table >> run_data_checks >> end_operator
-
