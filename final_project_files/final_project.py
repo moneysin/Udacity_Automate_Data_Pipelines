@@ -38,8 +38,8 @@ stage_events_to_redshift = StageToRedshiftOperator(
     s3_bucket='airflow-udacity2024',
     s3_key='log-data/2018/11/',
     file_format='JSON',
-    redshift_conn_id='redshift',
-    aws_credential_id='awsuser',
+    redshift_conn_id='****',
+    aws_credential_id='****',
     copy_options=("'s3://airflow-udacity2024/log_json_path.json'",),
     region='us-east-1',
     dag=dag
@@ -53,8 +53,8 @@ stage_songs_to_redshift = StageToRedshiftOperator(
     s3_bucket='airflow-udacity2024',
     s3_key='song-data/',
     file_format='JSON',
-    redshift_conn_id='redshift',
-    aws_credential_id='awsuser',
+    redshift_conn_id='****',
+    aws_credential_id='****',
     copy_options=("'auto'",),
     region='us-east-1',
     dag=dag
@@ -62,7 +62,7 @@ stage_songs_to_redshift = StageToRedshiftOperator(
 
 load_songplays_table = LoadFactOperator(
     task_id='Load_songplays_fact_table',
-    redshift_conn_id='redshift',
+    redshift_conn_id='****',
     table='songplays',
     create_table_sql=final_project_sql_statements.songplay_table_create,
     sql_query=final_project_sql_statements.songplay_table_insert,
@@ -72,7 +72,7 @@ load_songplays_table = LoadFactOperator(
 
 load_song_dimension_table = LoadDimensionOperator(
     task_id='Load_song_dim_table',
-    redshift_conn_id='redshift',
+    redshift_conn_id='****',
     table='songs',
     create_table_sql=final_project_sql_statements.song_table_create,
     sql_query=final_project_sql_statements.song_table_insert,
@@ -82,7 +82,7 @@ load_song_dimension_table = LoadDimensionOperator(
 
 load_user_dimension_table = LoadDimensionOperator(
     task_id='Load_user_dim_table',
-    redshift_conn_id='redshift',
+    redshift_conn_id='****',
     table='users',
     create_table_sql=final_project_sql_statements.user_table_create,
     sql_query=final_project_sql_statements.user_table_insert,
@@ -92,7 +92,7 @@ load_user_dimension_table = LoadDimensionOperator(
 
 load_artist_dimension_table = LoadDimensionOperator(
     task_id='Load_artist_dim_table',
-    redshift_conn_id='redshift',
+    redshift_conn_id='****',
     table='artists',
     create_table_sql=final_project_sql_statements.artist_table_create,
     sql_query=final_project_sql_statements.artist_table_insert,
@@ -102,7 +102,7 @@ load_artist_dimension_table = LoadDimensionOperator(
 
 load_time_dimension_table = LoadDimensionOperator(
     task_id='Load_time_dim_table',
-    redshift_conn_id='redshift',
+    redshift_conn_id='****',
     table='time',
     create_table_sql=final_project_sql_statements.time_table_create,
     sql_query=final_project_sql_statements.time_table_insert,
@@ -112,7 +112,7 @@ load_time_dimension_table = LoadDimensionOperator(
 
 run_data_checks = DataQualityOperator(
     task_id='Run_data_quality_checks',
-    redshift_conn_id='redshift',
+    redshift_conn_id='****',
     tables=['songplays','songs','users','artists','time'],
     checks=[
         {'check_sql': "SELECT COUNT(*) FROM users WHERE user_id IS NULL", 'expected_result': 0},
