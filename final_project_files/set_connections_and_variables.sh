@@ -15,7 +15,7 @@
  "is_encrypted": "False", 
  "is_extra_encrypted": "False", 
  "extra_dejson": {}, 
- "get_uri": "aws://AKIA2G34XAEDMXI7A6PN:gykmYJeS%2FKilxzg7hqS7OQmT3SraCAoX%2f357fs2r@"
+ "get_uri": "********"
 }]
 #
 # Copy the value after "get_uri":
@@ -34,15 +34,15 @@
  "conn_id": "redshift", 
  "conn_type": "redshift", 
  "description": "", 
- "host": "default-workgroup.701951836422.us-east-1.redshift-serverless.amazonaws.com", 
+ "host": "********", 
  "schema": "public", 
- "login": "awsuser", 
- "password": "R3dsh1ft", 
+ "login": "********", 
+ "password": "********", 
  "port": "5439", 
  "is_encrypted": "False", 
  "is_extra_encrypted": "False", 
  "extra_dejson": {}, 
- "get_uri": "redshift://awsuser:R3dsh1ft@default-workgroup.701951836422.us-east-1.redshift-serverless.amazonaws.com:5439/dev"}]
+ "get_uri": "********"}]
 #
 # Copy the value after "get_uri":
 #
